@@ -1,0 +1,1 @@
+{"version":3,"file":"linkWallet.d.ts","sourceRoot":"","sources":["../../../src/bot/commands/linkWallet.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,UAAU,CAAA;AAQlC,wBAAsB,iBAAiB,CAAC,GAAG,EAAE,OAAO,iBA6BnD;AAED,wBAAsB,uBAAuB,CAAC,GAAG,EAAE,OAAO,oBAqEzD;AAED,wBAAsB,eAAe,CAAC,GAAG,EAAE,OAAO,iBAsBjD;AAED,wBAAsB,mBAAmB,CAAC,GAAG,EAAE,OAAO,iBAoBrD"}

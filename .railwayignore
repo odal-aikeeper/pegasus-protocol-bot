@@ -1,0 +1,9 @@
+node_modules/
+.git/
+.env
+*.log
+dist/
+pegasus.db
+.DS_Store
+*.sqlite
+*.db

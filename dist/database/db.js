@@ -1,8 +1,11 @@
-import Database from 'better-sqlite3'
-import path from 'path'
-
-const db: Database.Database = new Database(path.join(__dirname, '../../pegasus.db'))
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const better_sqlite3_1 = __importDefault(require("better-sqlite3"));
+const path_1 = __importDefault(require("path"));
+const db = new better_sqlite3_1.default(path_1.default.join(__dirname, '../../pegasus.db'));
 // Create tables on startup
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (
@@ -64,13 +67,12 @@ db.exec(`
     tx_signature TEXT,
     created_at INTEGER DEFAULT (strftime('%s', 'now'))
   );
-`)
-
+`);
 // Initialize default data
-const initData = db.prepare('SELECT COUNT(*) as count FROM lottery_pool').get() as { count: number }
+const initData = db.prepare('SELECT COUNT(*) as count FROM lottery_pool').get();
 if (initData.count === 0) {
-  db.prepare('INSERT INTO lottery_pool (current_amount, current_market_cap, next_milestone_market_cap) VALUES (0, 0, 30000)').run()
-  db.prepare('INSERT INTO buyback_volume (total_volume) VALUES (0)').run()
+    db.prepare('INSERT INTO lottery_pool (current_amount, current_market_cap, next_milestone_market_cap) VALUES (0, 0, 30000)').run();
+    db.prepare('INSERT INTO buyback_volume (total_volume) VALUES (0)').run();
 }
-
-export default db
+exports.default = db;
+//# sourceMappingURL=db.js.map
